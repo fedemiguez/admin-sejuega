@@ -1,0 +1,75 @@
+<ion-view view-title="Nuevo Partido">
+  <ion-content>
+  	<form name="myForm" novalidate>
+  <div class="list">
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Nombre del Partido</span>
+      <input type="text" name="titulo" placeholder="Nombre del Partido" ng-model="partidos.nombre">
+    </label>
+
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Invitados</span>
+      <textarea name="descripcion" placeholder="Invitados" ng-model="partidos.participantes"></textarea>
+    </label>
+
+    <label class="item item-input item-stacked-label ">
+      <span class="input-label">Fecha</span>
+      <input type="date" name="precio" placeholder="fecha" ng-model="partidos.fecha">
+    </label>
+
+  <div class="col">
+    <button ng-click="doCreate()" class="item button button-full button-assertive ink">Crear Partido</button>
+  </div>
+
+</form>
+  </ion-content>
+</ion-view>
+
+<!--<div class="list">
+
+  <label class="item item-input item-select">
+
+    <div class="input-label">
+      Barrio
+    </div>
+    <select>
+
+      <option >Nva Cba</option>
+      <option selected>Gral Paz</option>
+      <option>Huemes</option>
+    </select>
+  </label>
+
+</div>
+
+
+<div class="list">
+
+  <label class="item">
+
+              <div class="input-label ">
+              Tipo de Inmueble
+              </div>
+
+               <li class="item item-toggle">
+                  Alquiler
+                  <label class="toggle toggle-assertive">
+                    <input type="checkbox">
+                    <div class="track">
+                      <div class="handle"></div>
+                    </div>
+                  </label>
+               </li>
+
+               <li class="item item-toggle">
+                  Venta
+                  <label class="toggle toggle-assertive">
+                    <input type="checkbox">
+                    <div class="track">
+                      <div class="handle"></div>
+                    </div>
+                  </label>
+               </li>
+  </label>
+</div>-->
+

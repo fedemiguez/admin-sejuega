@@ -1,0 +1,18 @@
+<ion-view view-title="Partidos">
+  <ion-content>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" placeholder="Buscar" ng-model="searchQuery" />
+    </label>
+    <div class="list">
+      <a class="item item-thumbnail-left"  ng-repeat="partido in partidos | filter:searchQuery" href="#/app/partido/{{partido.id}}">
+      <img src="img/prueba1.jpg">
+      <h2>{{partido.id}}</h2>
+      <p>{{partido.nombre}}</p>
+      <p>{{partido.fecha}}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
+
+
