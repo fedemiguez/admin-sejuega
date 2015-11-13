@@ -2,6 +2,19 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
+
+    $scope.doLogout = function(){
+    $http.get('http://sejuega.herokuapp.com/logout', {withCredentials: true}).then(function(resp) {
+    $scope.user = resp.data.data;
+    $location.path('/app/inicio');
+
+    }, function(err) {
+      console.error('ERR', err);
+      // err.status will contain the status code
+    });
+
+        }
+
 })
 
 .controller('UsuarioslistsCtrl', function($scope, $http, $location) {
@@ -134,7 +147,7 @@ angular.module('starter.controllers', [])
   
 })
 
-.controller('PartidoslistsCtrl', function($scope, $http) {
+.controller('PartidoslistsCtrl', function($scope, $http, $location) {
 
       $scope.user = [];
 
@@ -142,8 +155,8 @@ angular.module('starter.controllers', [])
       $scope.user = resp.data.data;
       console.log('Succes', resp.data.data);
     }, function(err) {
-      console.error('ERR', err);
       $location.path('/app/inicio');
+      console.error('ERR', err);
       // err.status will contain the status code
     });
 
@@ -167,8 +180,8 @@ angular.module('starter.controllers', [])
       $scope.user = resp.data.data;
       console.log('Succes', resp.data.data);
     }, function(err) {
-      console.error('ERR', err);
       $location.path('/app/inicio');
+      console.error('ERR', err);
       // err.status will contain the status code
     });
 
@@ -214,8 +227,9 @@ angular.module('starter.controllers', [])
       $scope.user = resp.data.data;
       console.log('Succes', resp.data.data);
     }, function(err) {
-      console.error('ERR', err);
       $location.path('/app/inicio');
+      console.error('ERR', err);
+
       // err.status will contain the status code
     });
 
