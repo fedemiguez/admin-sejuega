@@ -15,6 +15,15 @@ angular.module('starter.controllers', [])
 
         }
 
+ $scope.user = [];
+    $http.get('http://sejuega.herokuapp.com/me', {withCredentials: true}).then(function(resp) {
+    $scope.user = resp.data.data;
+    }, function(err) {
+      console.error('ERR', err);
+      
+      // err.status will contain the status code
+    });
+
 })
 
 .controller('UsuarioslistsCtrl', function($scope, $http, $location) {
